@@ -41,5 +41,5 @@ system("cls")
 dithering = input("Dithering (may slow down processing) [y/n]:") == 'y'
 dithering = "floyd_steinberg" if dithering else "none"
 
-system(f"echo 3 && ffmpeg -i {input('Video Name: ')} -i palette.png -filter_complex \"paletteuse=dither={dithering}\" -pix_fmt yuv420p output.mp4")
+system(f"ffmpeg -i {input('Video Name: ')} -i palette.png -filter_complex \"paletteuse=dither={dithering}\" -pix_fmt yuv420p output.mp4")
 system("cls")
